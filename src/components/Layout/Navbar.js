@@ -3,7 +3,7 @@ import Logo from '../UI/Logo';
 import { FiMenu, FiPhone } from 'react-icons/fi';
 import Button from '../UI/Button';
 
-const Navbar = () => {
+const Navbar = (props) => {
 	return (
 		<div className="flex justify-between items-center border-b-2 border-slate-200 py-2 px-2 md:px-5 lg:px-12 xl:px-40">
 			<div className="w-36 pl-2 md:pl-0">
@@ -21,9 +21,16 @@ const Navbar = () => {
 					<FiPhone size={'24'} />
 					<span className="ml-2">022 2334645</span>
 				</a>
-				<Button>Donasi</Button>
+				<Button
+					options={{
+						type: 'link',
+						href: '/donasi',
+					}}
+				>
+					Donasi
+				</Button>
 			</div>
-			<div className="lg:hidden">
+			<div className="lg:hidden" onClick={props.offcanvasToggle}>
 				<FiMenu size={32} />
 			</div>
 		</div>
