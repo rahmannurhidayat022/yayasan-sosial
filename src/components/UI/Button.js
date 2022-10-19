@@ -1,6 +1,6 @@
 const Button = (props) => {
 	const classesArray = [
-		'bg-palette-1 text-white font-medium py-4 px-8 rounded-[12px] shadow-md hover:bg-focus-1 text-center',
+		'bg-palette-1 text-white font-medium py-3 px-5 rounded-lg hover:bg-focus-1 text-center',
 	];
 	if (props.className !== undefined) {
 		props.className && classesArray.push(props.className);

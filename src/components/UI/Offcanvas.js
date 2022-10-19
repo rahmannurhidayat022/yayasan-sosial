@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom';
+import Logo from './Logo';
 
 const Backdrop = (props) => {
 	return (
@@ -11,9 +12,30 @@ const Backdrop = (props) => {
 
 const OffcanvasOverlay = (props) => {
 	return (
-		<div className="fixed top-0 right-0 w-10/12 h-screen z-30 flex justify-center items-center bg-palette-4 text-white font-medium pt-8 pr-5">
+		<aside className="fixed top-0 left-0 w-4/5 md:w-80 h-screen z-30 pl-6 bg-white pt-8 pr-5">
+			<div className="flex justify-between mb-8">
+				<div className="w-28">
+					<Logo />
+				</div>
+				<button className="navbar-close" onClick={props.onClose}>
+					<svg
+						className="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							strokeWidth="2"
+							d="M6 18L18 6M6 6l12 12"
+						></path>
+					</svg>
+				</button>
+			</div>
 			{props.children}
-		</div>
+		</aside>
 	);
 };
 
@@ -27,7 +49,9 @@ const Offcanvas = (props) => {
 				portalElement
 			)}
 			{ReactDOM.createPortal(
-				<OffcanvasOverlay>{props.children}</OffcanvasOverlay>,
+				<OffcanvasOverlay onClose={props.onClose}>
+					{props.children}
+				</OffcanvasOverlay>,
 				portalElement
 			)}
 		</>
