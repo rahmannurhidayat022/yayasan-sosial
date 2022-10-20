@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { uiActions } from '../../store/ui-slice';
+import Footer from './Footer';
 import Navbar from './Navbar';
 import Sidemenu from './Sidemenu';
 
@@ -13,8 +14,9 @@ const LandingLayout = (props) => {
 	return (
 		<>
 			<Navbar offcanvasToggle={offcanvasToggle} />
-			{props.children}
 			{offcanvasVisible && <Sidemenu offcanvasToggle={offcanvasToggle} />}
+			<main className="min-h-[600px]">{props.children}</main>
+			<Footer />
 		</>
 	);
 };

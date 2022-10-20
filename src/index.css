@@ -7,6 +7,12 @@
 	src: url('../public/fonts/Poppins/Poppins-Regular.ttf');
 }
 
+@layer components {
+	.container-custom {
+		@apply py-2 px-2 md:px-5 lg:px-12 xl:px-40;
+	}
+}
+
 body {
 	margin: 0;
 	font-family: 'Poppins', sans;
