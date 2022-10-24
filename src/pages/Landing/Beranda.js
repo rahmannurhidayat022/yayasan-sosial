@@ -5,7 +5,7 @@ const Beranda = () => {
 	return (
 		<LandingLayout>
 			<Hero />
-			<div className="container-custom md:flex md:flex-row md:gap-8 md:flex-nowrap md:items-center md:justify-center">
+			<section className="container-custom md:flex md:flex-row md:gap-8 md:flex-nowrap md:items-center md:justify-center">
 				<img
 					src="/images/about.png"
 					alt="tentang yayasan alhidayah baitul hatim"
@@ -189,7 +189,7 @@ const Beranda = () => {
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 		</LandingLayout>
 	);
 };
