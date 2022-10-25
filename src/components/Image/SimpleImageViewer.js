@@ -17,10 +17,10 @@ const SimpleImageViewer = ({ images }) => {
 
 	const renderImage = images?.map((src, index) => {
 		return (
-			<div className="w-full overflow-hidden cursor-pointer">
+			<div key={index} className="w-full overflow-hidden cursor-pointer">
 				<img
 					onClick={() => openImageViewer(index)}
-					className="object-cover bg-cover hover:scale-150"
+					className="w-full object-cover bg-cover hover:scale-150"
 					key={index}
 					src={src}
 					alt={index}
