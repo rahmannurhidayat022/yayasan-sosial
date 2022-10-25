@@ -1,5 +1,64 @@
+import { Link } from 'react-router-dom';
 import Hero from '../../components/Layout/Hero';
 import LandingLayout from '../../components/Layout/LandingLayout';
+import { AiOutlineArrowRight } from 'react-icons/ai';
+
+const berita = [
+	{
+		id: 1,
+		title:
+			'Berbagi bersama masyarakat antapani dalam rangka hari puasa bersama Al-Hidayah Baitul Hatim',
+		created_at: '16 Oktober 2022',
+		coverImage: 'berita-1.png',
+	},
+	{
+		id: 2,
+		title:
+			'Berbagi bersama masyarakat antapani dalam rangka hari puasa bersama Al-Hidayah Baitul Hatim',
+		created_at: '17 Oktober 2022',
+		coverImage: 'berita-2.png',
+	},
+	{
+		id: 3,
+		title:
+			'Berbagi bersama masyarakat antapani dalam rangka hari puasa bersama Al-Hidayah Baitul Hatim',
+		created_at: '18 Oktober 2022',
+		coverImage: 'berita-3.png',
+	},
+	{
+		id: 4,
+		title:
+			'Berbagi bersama masyarakat antapani dalam rangka hari puasa bersama Al-Hidayah Baitul Hatim',
+		created_at: '19 Oktober 2022',
+		coverImage: 'berita-4.png',
+	},
+];
+
+const beritaRender = berita?.map(
+	({ id, title, created_at, coverImage }, index) => {
+		return (
+			<Link
+				key={index}
+				className="group relative w-full bg-white rounded overflow-hidden"
+				to={`kegiatan/${id}`}
+			>
+				<div className="w-full h-[175px] overflow-hidden">
+					<img
+						className="w-full h-full bg-cover object-cover group-hover:scale-150"
+						src={`/images/${coverImage}`}
+						alt={title}
+					/>
+				</div>
+				<div className="p-2">
+					<h3 className="font-medium text-base md:text-sm lg:text-base mb-2 group-hover:text-palette-1">
+						{title}
+					</h3>
+					<span className="font-light text-xs text-gray-500">{created_at}</span>
+				</div>
+			</Link>
+		);
+	}
+);
 
 const Beranda = () => {
 	return (
@@ -189,6 +248,20 @@ const Beranda = () => {
 						</div>
 					</div>
 				</div>
+			</section>
+			<section className="container-custom bg-gray-100 py-16">
+				<div className="mb-4 md:flex md:flex-col md:justify-center md:items-center">
+					<h2 className="text-xl mb-4">Berita & Kegiatan</h2>
+					<div className="flex flex-col gap-2 md:flex-row">{beritaRender}</div>
+				</div>
+				<Link className="flex items-center gap-1 md:justify-end" to="/berita">
+					<div className="py-2 px-3 hover:bg-focus-1 hover:text-white hover:border-white text-gray-800 text-sm rounded border-palette-1 border-2 flex items-center gap-1">
+						Berita & Kegiatan Lainnya
+						<span>
+							<AiOutlineArrowRight />
+						</span>
+					</div>
+				</Link>
 			</section>
 		</LandingLayout>
 	);
