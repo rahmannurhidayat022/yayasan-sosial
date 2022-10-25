@@ -7,7 +7,7 @@ const ProfilLembaga = () => {
 			<Breadcrumb title="Profil Lembaga" />
 			<section className="container-custom my-6 grid gap-6 grid-cols-1 md:grid-cols-2 md:gap-2">
 				<div className="">
-					<h2 className="uppercase text-lg font-semibold mb-6">
+					<h2 className="uppercase text-lg font-semibold mb-4">
 						Legalitas Yayasan Al-Hidayah Baitul Hatim
 					</h2>
 					<table className="table-auto">
@@ -37,7 +37,7 @@ const ProfilLembaga = () => {
 					</table>
 				</div>
 				<div className="">
-					<h2 className="uppercase text-lg font-semibold mb-6">
+					<h2 className="uppercase text-lg font-semibold mb-4">
 						Profil Lembaga
 					</h2>
 					<p className="mb-3">
