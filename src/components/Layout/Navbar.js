@@ -8,7 +8,7 @@ import { AiOutlineHistory } from 'react-icons/ai';
 
 const Navbar = (props) => {
 	return (
-		<header className="sticky flex justify-between items-center border-b-2 border-slate-200 container-custom">
+		<header className="sticky top-0 z-10 bg-white flex justify-between items-center border-b-2 border-slate-200 container-custom">
 			<div className="w-36 pl-2 md:pl-0">
 				<Logo />
 			</div>

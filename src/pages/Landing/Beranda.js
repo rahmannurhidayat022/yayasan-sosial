@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Hero from '../../components/Layout/Hero';
 import LandingLayout from '../../components/Layout/LandingLayout';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import SimpleImageViewer from '../../components/Image/SimpleImageViewer';
 
 const berita = [
 	{
@@ -9,43 +10,54 @@ const berita = [
 		title:
 			'Berbagi bersama masyarakat antapani dalam rangka hari puasa bersama Al-Hidayah Baitul Hatim',
 		created_at: '16 Oktober 2022',
-		coverImage: 'berita-1.png',
+		image_url: '/images/berita-1.png',
 	},
 	{
 		id: 2,
 		title:
 			'Berbagi bersama masyarakat antapani dalam rangka hari puasa bersama Al-Hidayah Baitul Hatim',
 		created_at: '17 Oktober 2022',
-		coverImage: 'berita-2.png',
+		image_url: '/images/berita-2.png',
 	},
 	{
 		id: 3,
 		title:
 			'Berbagi bersama masyarakat antapani dalam rangka hari puasa bersama Al-Hidayah Baitul Hatim',
 		created_at: '18 Oktober 2022',
-		coverImage: 'berita-3.png',
+		image_url: '/images/berita-3.png',
 	},
 	{
 		id: 4,
 		title:
 			'Berbagi bersama masyarakat antapani dalam rangka hari puasa bersama Al-Hidayah Baitul Hatim',
 		created_at: '19 Oktober 2022',
-		coverImage: 'berita-4.png',
+		image_url: '/images/berita-4.png',
 	},
 ];
 
+const galeri = [
+	'/images/galeri-1.png',
+	'/images/galeri-2.png',
+	'/images/galeri-3.png',
+	'/images/galeri-4.png',
+	'/images/galeri-5.png',
+	'/images/galeri-6.png',
+	'/images/galeri-7.png',
+	'/images/galeri-8.png',
+];
+
 const beritaRender = berita?.map(
-	({ id, title, created_at, coverImage }, index) => {
+	({ id, title, created_at, image_url }, index) => {
 		return (
 			<Link
 				key={index}
-				className="group relative w-full bg-white rounded overflow-hidden"
+				className="group w-full bg-white rounded overflow-hidden"
 				to={`kegiatan/${id}`}
 			>
 				<div className="w-full h-[175px] overflow-hidden">
 					<img
 						className="w-full h-full bg-cover object-cover group-hover:scale-150"
-						src={`/images/${coverImage}`}
+						src={image_url}
 						alt={title}
 					/>
 				</div>
@@ -64,7 +76,7 @@ const Beranda = () => {
 	return (
 		<LandingLayout>
 			<Hero />
-			<section className="container-custom md:flex md:flex-row md:gap-8 md:flex-nowrap md:items-center md:justify-center">
+			<section className="container-custom py-6 md:flex md:flex-row md:gap-8 md:flex-nowrap md:items-center md:justify-center">
 				<img
 					src="/images/about.png"
 					alt="tentang yayasan alhidayah baitul hatim"
@@ -257,6 +269,22 @@ const Beranda = () => {
 				<Link className="flex items-center gap-1 md:justify-end" to="/berita">
 					<div className="py-2 px-3 hover:bg-focus-1 hover:text-white hover:border-white text-gray-800 text-sm rounded border-palette-1 border-2 flex items-center gap-1">
 						Berita & Kegiatan Lainnya
+						<span>
+							<AiOutlineArrowRight />
+						</span>
+					</div>
+				</Link>
+			</section>
+			<section className="container-custom py-16">
+				<div className="p-0 mb-4 md:flex md:flex-col md:justify-center md:items-center">
+					<h2 className="text-xl mb-4">Galeri Yayasan</h2>
+					<div className="grid grid-cols-1 gap-2 md:grid-cols-3 lg:grid-cols-4">
+						<SimpleImageViewer images={galeri} />
+					</div>
+				</div>
+				<Link className="flex items-center gap-1 md:justify-end" to="/galeri">
+					<div className="py-2 px-3 hover:bg-focus-1 hover:text-white hover:border-white text-gray-800 text-sm rounded border-palette-1 border-2 flex items-center gap-1">
+						Galeri Lainnya
 						<span>
 							<AiOutlineArrowRight />
 						</span>
