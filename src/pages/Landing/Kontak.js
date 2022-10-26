@@ -10,8 +10,22 @@ import {
 	MdOutlineEmail,
 	MdPhone,
 } from 'react-icons/md';
+import Button from '../../components/UI/Button';
+import { useForm } from 'react-hook-form';
 
 const Kontak = () => {
+	const {
+		register,
+		handleSubmit,
+		formState: { errors, isValid },
+	} = useForm({
+		mode: 'all',
+	});
+
+	const onSubmit = (data) => {
+		console.log(data);
+	};
+
 	return (
 		<LandingLayout>
 			<Breadcrumb title="Kontak Kami" />
@@ -27,21 +41,67 @@ const Kontak = () => {
 				/>
 			</section>
 			<section className="container-custom py-4 w-full flex flex-col gap-10 md:flex-row-reverse">
-				<div className="w-full">
+				<form onSubmit={handleSubmit(onSubmit)} className="w-full">
 					<h2 className="text-gray-700 text-lg mb-3">
 						Hubungi kami melalui form dibawah ini.
 					</h2>
 					<div className="flex flex-col lg:flex-row lg:gap-3">
-						<Input id="name" label="Nama Lengkap" requireIcon="true" />
-						<Input id="email" label="E-Mail" requireIcon="true" />
+						<Input
+							options={{
+								...register('name', {
+									required: 'Nama Lengkap tidak boleh kosong',
+								}),
+							}}
+							id="name"
+							label="Nama Lengkap"
+							requireIcon="true"
+							hasError={!!errors?.name}
+							errorMessage={errors?.name?.message}
+						/>
+						<Input
+							options={{
+								...register('email', {
+									required: 'E-Mail tidak boleh kosong',
+									pattern: {
+										value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+										message: 'Invalid email address',
+									},
+								}),
+							}}
+							id="email"
+							label="E-Mail"
+							requireIcon="true"
+							hasError={!!errors?.email}
+							errorMessage={errors?.email?.message}
+						/>
 					</div>
-					<Input id="subject" label="Subjek" />
+					<Input
+						options={{
+							...register('subject', { required: 'Subjek tidak boleh kosong' }),
+						}}
+						id="subject"
+						label="Subjek"
+						requireIcon="true"
+						hasError={!!errors?.subject}
+						errorMessage={errors?.subject?.message}
+					/>
 					<TextArea
 						id="keterangan"
 						label="Keterangan"
-						options={{ rows: '4' }}
+						options={{
+							...register('keterangan'),
+							rows: '4',
+						}}
 					></TextArea>
-				</div>
+					<Button
+						options={{
+							type: 'submit',
+							disabled: !isValid,
+						}}
+					>
+						Kirim
+					</Button>
+				</form>
 				<div className="w-full flex flex-col gap-2 md:gap-4">
 					<div className="flex flex-row gap-2">
 						<span className="self-start rounded-full bg-gray-300 text-gray-700 p-3">
