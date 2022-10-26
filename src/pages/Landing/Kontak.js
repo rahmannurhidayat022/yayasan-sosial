@@ -12,18 +12,37 @@ import {
 } from 'react-icons/md';
 import Button from '../../components/UI/Button';
 import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+	sendingEmail,
+	turnOffLoadingSendEmail,
+	turnOnLoadingSendEmail,
+} from '../../store/landing-slice';
+import Spin from '../../components/UI/Spin';
 
 const Kontak = () => {
+	const dispatch = useDispatch();
+	const { loading } = useSelector((state) => state.landing.sendEmail);
+
 	const {
 		register,
 		handleSubmit,
 		formState: { errors, isValid },
+		reset,
 	} = useForm({
 		mode: 'all',
 	});
 
 	const onSubmit = (data) => {
-		console.log(data);
+		if (!isValid) return;
+
+		dispatch(turnOnLoadingSendEmail());
+
+		setTimeout(() => {
+			dispatch(sendingEmail(data));
+			dispatch(turnOffLoadingSendEmail());
+			reset();
+		}, 1000);
 	};
 
 	return (
@@ -94,11 +113,13 @@ const Kontak = () => {
 						}}
 					></TextArea>
 					<Button
+						className="flex gap-2"
 						options={{
 							type: 'submit',
 							disabled: !isValid,
 						}}
 					>
+						{loading && <Spin />}
 						Kirim
 					</Button>
 				</form>
