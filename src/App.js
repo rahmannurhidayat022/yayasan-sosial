@@ -1,12 +1,12 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Loading from './components/UI/Loading';
-import Donasi from './pages/Landing/Donasi';
 
 const Beranda = lazy(() => import('./pages/Landing/Beranda'));
 const ProfilLembaga = lazy(() => import('./pages/Landing/ProfilLembaga'));
 const VisiMisi = lazy(() => import('./pages/Landing/VisiMisi'));
 const Kontak = lazy(() => import('./pages/Landing/Kontak'));
+const Donasi = lazy(() => import('./pages/Landing/Donasi'));
 
 function App() {
 	return (
