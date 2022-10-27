@@ -100,6 +100,7 @@ const Kontak = () => {
 										message: 'Invalid email address',
 									},
 								}),
+								type: 'email',
 							}}
 							id="email"
 							label="E-Mail"
