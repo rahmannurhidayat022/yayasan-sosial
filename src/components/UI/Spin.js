@@ -1,7 +1,7 @@
 import { CgSpinner } from 'react-icons/cg';
 
-const Spin = () => {
-	return <CgSpinner className="animate-spin" size={24} />;
+const Spin = ({ className, size = 24 }) => {
+	return <CgSpinner className={`animate-spin ${className}`} size={size} />;
 };
 
 export default Spin;

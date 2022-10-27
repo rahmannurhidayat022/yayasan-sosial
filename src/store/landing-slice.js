@@ -4,8 +4,8 @@ const landingSlice = createSlice({
 	name: 'landing page store',
 	initialState: {
 		sendEmail: {
-			error: {},
-			success: {},
+			error: null,
+			success: null,
 			loading: false,
 			data: null,
 		},
@@ -23,13 +23,13 @@ const landingSlice = createSlice({
 				state.sendEmail.data = action.payload;
 				//POST api/kontak
 
-				state.sendEmail.error = {};
+				state.sendEmail.error = null;
 				state.sendEmail.success = {
 					message:
 						'Pesan berhasil terkirim, kami akan menghubungi kembali melalui E-Mail yang telah anda cantumkan sebelumnya',
 				};
 			} catch (error) {
-				state.sendEmail.success = {};
+				state.sendEmail.success = null;
 				state.sendEmail.error = {
 					message: 'Pesan gagal terkirim',
 				};

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { uiActions } from '../../store/ui-slice';
+import { offcanvasToggle } from '../../store/ui-slice';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import Sidemenu from './Sidemenu';
@@ -7,14 +7,14 @@ import Sidemenu from './Sidemenu';
 const LandingLayout = (props) => {
 	const { offcanvasVisible } = useSelector((state) => state.ui);
 	const dispatch = useDispatch();
-	const offcanvasToggle = () => {
-		dispatch(uiActions.offcanvasToggle());
+	const offcanvasHandler = () => {
+		dispatch(offcanvasToggle());
 	};
 
 	return (
 		<>
-			<Navbar offcanvasToggle={offcanvasToggle} />
-			{offcanvasVisible && <Sidemenu offcanvasToggle={offcanvasToggle} />}
+			<Navbar offcanvasToggle={offcanvasHandler} />
+			{offcanvasVisible && <Sidemenu offcanvasToggle={offcanvasHandler} />}
 			<main className="min-h-[600px]">{props.children}</main>
 			<Footer />
 		</>
