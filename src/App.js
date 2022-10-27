@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Loading from './components/UI/Loading';
+import Donasi from './pages/Landing/Donasi';
 
 const Beranda = lazy(() => import('./pages/Landing/Beranda'));
 const ProfilLembaga = lazy(() => import('./pages/Landing/ProfilLembaga'));
@@ -16,6 +17,7 @@ function App() {
 					<Route path="/profil-lembaga" element={<ProfilLembaga />} />
 					<Route path="/visi-misi" element={<VisiMisi />} />
 					<Route path="/kontak" element={<Kontak />} />
+					<Route path="/donasi" element={<Donasi />} />
 				</Routes>
 			</div>
 		</Suspense>

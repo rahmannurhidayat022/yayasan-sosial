@@ -86,7 +86,7 @@ const Navbar = (props) => {
 						<span className="ml-2">022 2334645</span>
 					</a>
 					<Button
-						className="flex justify-center items-center"
+						className="flex justify-center items-center place-self-center"
 						options={{
 							type: 'link',
 							href: '/donasi',
