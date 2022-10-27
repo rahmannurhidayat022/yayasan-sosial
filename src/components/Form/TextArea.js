@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, memo } from 'react';
 
 const TextArea = forwardRef(
 	(
@@ -36,4 +36,4 @@ const TextArea = forwardRef(
 	}
 );
 
-export default TextArea;
+export default memo(TextArea);

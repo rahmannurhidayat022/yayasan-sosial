@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, memo } from 'react';
 
 const Input = forwardRef(
 	(
@@ -33,4 +33,4 @@ const Input = forwardRef(
 	}
 );
 
-export default Input;
+export default memo(Input);

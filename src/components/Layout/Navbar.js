@@ -8,6 +8,7 @@ import { AiOutlineHistory } from 'react-icons/ai';
 import Alert from '../UI/Alert';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeAlert } from '../../store/ui-slice';
+import { memo } from 'react';
 
 const Navbar = (props) => {
 	const dispatch = useDispatch();
@@ -105,4 +106,4 @@ const Navbar = (props) => {
 	);
 };
 
-export default Navbar;
+export default memo(Navbar);

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { offcanvasToggle } from '../../store/ui-slice';
 import Footer from './Footer';
@@ -21,4 +22,4 @@ const LandingLayout = (props) => {
 	);
 };
 
-export default LandingLayout;
+export default memo(LandingLayout);

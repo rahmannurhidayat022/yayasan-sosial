@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 const Logo = () => {
 	return (
 		<img
@@ -7,4 +9,4 @@ const Logo = () => {
 	);
 };
 
-export default Logo;
+export default memo(Logo);

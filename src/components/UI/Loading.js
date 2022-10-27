@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Spin from './Spin';
 
 const Loading = () => {
@@ -8,4 +9,4 @@ const Loading = () => {
 	);
 };
 
-export default Loading;
+export default memo(Loading);

@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 const Hero = () => {
 	return (
 		<section
@@ -148,4 +150,4 @@ const Hero = () => {
 	);
 };
 
-export default Hero;
+export default memo(Hero);
