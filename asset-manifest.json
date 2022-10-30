@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/yayasan-sosial/static/css/main.ead9e8ca.css",
-    "main.js": "/yayasan-sosial/static/js/main.c2cab838.js",
+    "main.js": "/yayasan-sosial/static/js/main.a33486bc.js",
     "static/js/7.71fa4b4f.chunk.js": "/yayasan-sosial/static/js/7.71fa4b4f.chunk.js",
     "static/js/254.ac0de39f.chunk.js": "/yayasan-sosial/static/js/254.ac0de39f.chunk.js",
     "static/js/715.9d56b02d.chunk.js": "/yayasan-sosial/static/js/715.9d56b02d.chunk.js",
@@ -15,7 +15,7 @@
     "static/media/Poppins-Regular.ttf": "/yayasan-sosial/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "index.html": "/yayasan-sosial/index.html",
     "main.ead9e8ca.css.map": "/yayasan-sosial/static/css/main.ead9e8ca.css.map",
-    "main.c2cab838.js.map": "/yayasan-sosial/static/js/main.c2cab838.js.map",
+    "main.a33486bc.js.map": "/yayasan-sosial/static/js/main.a33486bc.js.map",
     "7.71fa4b4f.chunk.js.map": "/yayasan-sosial/static/js/7.71fa4b4f.chunk.js.map",
     "254.ac0de39f.chunk.js.map": "/yayasan-sosial/static/js/254.ac0de39f.chunk.js.map",
     "715.9d56b02d.chunk.js.map": "/yayasan-sosial/static/js/715.9d56b02d.chunk.js.map",
@@ -29,6 +29,6 @@
   },
   "entrypoints": [
     "static/css/main.ead9e8ca.css",
-    "static/js/main.c2cab838.js"
+    "static/js/main.a33486bc.js"
   ]
 }
