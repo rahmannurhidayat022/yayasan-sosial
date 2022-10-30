@@ -7,7 +7,14 @@ import LandingLayout from '../../components/Layout/LandingLayout';
 import Breadcrumb from '../../components/UI/Breadcrumb';
 import Button from '../../components/UI/Button';
 import CopyToClipboard from '../../components/UI/CopyToClipboard';
-import Spin from '../../components/UI/Spin';
+// import Spin from '../../components/UI/Spin';
+import { HiInformationCircle } from 'react-icons/hi';
+import {
+	maxLengthPhoneNumber,
+	minLengthPhoneNumber,
+	normalImageValidate,
+	sizeLimit,
+} from '../../utils/formValidates';
 
 const rekening = [
 	{
@@ -39,7 +46,7 @@ const Donasi = () => {
 	});
 
 	let nominal = watch('nominal');
-	const loading = true;
+	// const loading = true;
 
 	useEffect(() => {
 		if (nominal === 'lainnya') {
@@ -63,7 +70,9 @@ const Donasi = () => {
 			email: data?.email,
 			whatsapp: data?.whatsapp,
 			keterangan: data?.keterangan,
+			bukti_transfer: data?.bukti_transfer,
 		};
+
 		console.log(newData);
 		reset();
 	};
@@ -83,12 +92,6 @@ const Donasi = () => {
 	return (
 		<LandingLayout>
 			<Breadcrumb title="Formulir Donasi" />
-			<section className="container-custom py-6">
-				<h2 className="text-lg font-semibold mb-5">
-					Rekening Donasi Yayasan Al-Hidayah Baitul Hatim:
-				</h2>
-				<ul className="">{renderData}</ul>
-			</section>
 			<section className="container-custom py-6">
 				<h2 className="text-lg font-semibold mb-5">Formulir Donasi</h2>
 				<form onSubmit={handleSubmit(onSubmit)}>
@@ -143,11 +146,11 @@ const Donasi = () => {
 							hasError={!!errors?.bank}
 						>
 							<option value="mandiri">Mandiri</option>
-							<option value="bni">Bank BTPN</option>
-							<option value="bni">BSI - Bank Syariah Indonesia</option>
+							<option value="btpn">Bank BTPN</option>
+							<option value="bsi">BSI - Bank Syariah Indonesia</option>
 							<option value="bni">BNI - Bank Negara Indonesia</option>
 							<option value="bri">BRI - Bank Republik Indonesia</option>
-							<option value="bni">BCA - Bank Central Asia</option>
+							<option value="bca">BCA - Bank Central Asia</option>
 						</Select>
 					</div>
 					{fieldNominalLainnya && (
@@ -204,6 +207,10 @@ const Donasi = () => {
 								...register('whatsapp', {
 									required: 'Harap isi nomor whatsapp anda',
 									valueAsNumber: true,
+									validate: {
+										minLength: (value) => minLengthPhoneNumber(value),
+										maxLength: (value) => maxLengthPhoneNumber(value),
+									},
 								}),
 								type: 'number',
 							}}
@@ -241,6 +248,34 @@ const Donasi = () => {
 							rows: '4',
 						}}
 					></TextArea>
+					<div className="lg:max-w-3xl my-6 py-4 px-2 rounded-lg border-2 border-palette-1">
+						<p className="flex gap-2 items-center text-lg mb-4 text-palette-1 font-semibold">
+							<span>
+								<HiInformationCircle size={30} />
+							</span>
+							Berikut informasi nomor rekening Yayasan Al-Hidayah Baitul Hatim
+						</p>
+						<ul className="">{renderData}</ul>
+						<Input
+							className="mt-10"
+							options={{
+								...register('bukti_transfer', {
+									required: 'Harap upload bukti transfer anda',
+									validate: {
+										extentions: (values) => normalImageValidate(values),
+										sizeLimit: (values) => sizeLimit(values),
+									},
+								}),
+								type: 'file',
+								accept: '.jpg,.jpeg,.png',
+							}}
+							id="bukti_transfer"
+							label="Bukti Pembayaran"
+							requireIcon="true"
+							hasError={!!errors?.bukti_transfer}
+							errorMessage={errors?.bukti_transfer?.message}
+						/>
+					</div>
 					<Button
 						className="flex gap-2"
 						options={{
@@ -248,8 +283,7 @@ const Donasi = () => {
 							disabled: !isValid,
 						}}
 					>
-						{loading && <Spin />}
-						Selanjutnya
+						Kirim
 					</Button>
 				</form>
 			</section>

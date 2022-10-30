@@ -22,11 +22,12 @@ const TextArea = forwardRef(
 				</label>
 				<textarea
 					className={`w-full border-2 rounded ${
-						hasError ? 'border-red-600' : 'border-gray-300'
+						hasError ? 'border-red-600 bg-red-100/50' : 'border-gray-300'
 					} py-2 px-1 focus:outline-none focus:border-palette-1`}
 					ref={ref}
 					{...options}
 					name={id}
+					autoComplete="off"
 				>
 					{children}
 				</textarea>

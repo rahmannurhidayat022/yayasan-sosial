@@ -9,6 +9,12 @@ const landingSlice = createSlice({
 			loading: false,
 			data: null,
 		},
+		donation: {
+			error: null,
+			success: null,
+			loading: false,
+			data: null,
+		},
 	},
 	reducers: {
 		sendingEmail: (state, action) => {
@@ -40,6 +46,18 @@ const landingSlice = createSlice({
 		},
 		turnOffLoadingSendEmail: (state) => {
 			state.sendEmail.loading = false;
+		},
+		save: (state, action) => {
+			if (action.payload === undefined) {
+				state.donation.error = {
+					message: 'data tidak boleh kosong!',
+				};
+				return;
+			}
+
+			if (state.donation.data === null) {
+				state.donation.data = action.payload;
+			}
 		},
 	},
 });
