@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/yayasan-sosial/static/css/main.ead9e8ca.css",
+    "main.js": "/yayasan-sosial/static/js/main.c2cab838.js",
+    "static/js/7.71fa4b4f.chunk.js": "/yayasan-sosial/static/js/7.71fa4b4f.chunk.js",
+    "static/js/254.ac0de39f.chunk.js": "/yayasan-sosial/static/js/254.ac0de39f.chunk.js",
+    "static/js/715.9d56b02d.chunk.js": "/yayasan-sosial/static/js/715.9d56b02d.chunk.js",
+    "static/js/601.a3de947c.chunk.js": "/yayasan-sosial/static/js/601.a3de947c.chunk.js",
+    "static/js/538.2944f997.chunk.js": "/yayasan-sosial/static/js/538.2944f997.chunk.js",
+    "static/js/531.d1ddbceb.chunk.js": "/yayasan-sosial/static/js/531.d1ddbceb.chunk.js",
+    "static/js/640.8dc9d0b5.chunk.js": "/yayasan-sosial/static/js/640.8dc9d0b5.chunk.js",
+    "static/js/893.6feceeb8.chunk.js": "/yayasan-sosial/static/js/893.6feceeb8.chunk.js",
+    "static/js/856.37b25098.chunk.js": "/yayasan-sosial/static/js/856.37b25098.chunk.js",
+    "static/js/366.56c3c901.chunk.js": "/yayasan-sosial/static/js/366.56c3c901.chunk.js",
+    "static/media/Poppins-Regular.ttf": "/yayasan-sosial/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "index.html": "/yayasan-sosial/index.html",
+    "main.ead9e8ca.css.map": "/yayasan-sosial/static/css/main.ead9e8ca.css.map",
+    "main.c2cab838.js.map": "/yayasan-sosial/static/js/main.c2cab838.js.map",
+    "7.71fa4b4f.chunk.js.map": "/yayasan-sosial/static/js/7.71fa4b4f.chunk.js.map",
+    "254.ac0de39f.chunk.js.map": "/yayasan-sosial/static/js/254.ac0de39f.chunk.js.map",
+    "715.9d56b02d.chunk.js.map": "/yayasan-sosial/static/js/715.9d56b02d.chunk.js.map",
+    "601.a3de947c.chunk.js.map": "/yayasan-sosial/static/js/601.a3de947c.chunk.js.map",
+    "538.2944f997.chunk.js.map": "/yayasan-sosial/static/js/538.2944f997.chunk.js.map",
+    "531.d1ddbceb.chunk.js.map": "/yayasan-sosial/static/js/531.d1ddbceb.chunk.js.map",
+    "640.8dc9d0b5.chunk.js.map": "/yayasan-sosial/static/js/640.8dc9d0b5.chunk.js.map",
+    "893.6feceeb8.chunk.js.map": "/yayasan-sosial/static/js/893.6feceeb8.chunk.js.map",
+    "856.37b25098.chunk.js.map": "/yayasan-sosial/static/js/856.37b25098.chunk.js.map",
+    "366.56c3c901.chunk.js.map": "/yayasan-sosial/static/js/366.56c3c901.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ead9e8ca.css",
+    "static/js/main.c2cab838.js"
+  ]
+}
